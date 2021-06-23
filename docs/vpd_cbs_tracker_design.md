@@ -1,4 +1,4 @@
-# Vaccine Preventable Disease (VPD) - Case-based Surveillance (CBS) - Tracker System Design - v1.0
+# VPD Case-based Surveillance Tracker Design
 
 ## Introduction
 
@@ -210,12 +210,8 @@ Integrated dashboards for each disease have been created. Please select a link b
 
 ## Program Rules
 
-There are 160 program rules. A separate document listing them all along with their description will be linked to this document when available.
+A complete list of program rules is inluded in the metadata reference file for the package, accessed at [dhis2.org/who-package-downloads](https://dhis2.org/who-package-downloads)
 
 ## Program Indicators
 
-There are 424 program indicators. A separate document listing them all along with their description will be linked to this document when available.
-
-## Validation Rules and Notifications
-
-To be updated when configuration is complete.
+A complete list of 424 program indicators is inluded in the metadata reference file for the package, accessed at [dhis2.org/who-package-downloads](https://dhis2.org/who-package-downloads)
