@@ -40,7 +40,7 @@ This use case is divided into 2 development phases as it relates to case based s
 
 ## Program Description
 
-All of the programs in the VPD-CBS package have a similar design, however different sections and variables are attached to each disease **_ based on the initial diagnosis that is selected during registration_**. The sections attached to each program are described in the [System Design Summary](#system-design-summary) section of this document. For a full listing of the variables for each disease, please refer to the [surveillance data elements](https://drive.google.com/file/d/1IL2fRyBcVI5IP-cTrwQW9dEqry7RI5dz/view?usp=sharing) document. The program is made up of the following stages in its design:
+All of the programs in the VPD-CBS package have a similar design, however different sections and variables are attached to each disease **_based on the initial diagnosis that is selected during registration_**. The sections attached to each program are described in the [System Design Summary](#system-design-summary) section of this document. For a full listing of the variables for each disease, please refer to the [surveillance data elements](https://drive.google.com/file/d/1IL2fRyBcVI5IP-cTrwQW9dEqry7RI5dz/view?usp=sharing) document. The program is made up of the following stages in its design:
 
 1. Enrollment Details
 2. Diagnostic & Clinical Information
@@ -66,34 +66,24 @@ Note that Neonatal Tetanus has a slightly different configuration, as it only in
 
 ## System Design Summary
 
-The DHIS2 VPD-CBS digital data package metadata is based on reporting templates available for each disease within the EPI-Info application. A full list of variables used for data collection that are included in the package can be viewed in the [surveillance data elements](https://drive.google.com/file/d/1IL2fRyBcVI5IP-cTrwQW9dEqry7RI5dz/view?usp=sharing) document. In addition to the data collection components associated with this package, a number of outputs have been created and are described in more detail in the _Dashboard Design Summary** **_section of this document.
+The DHIS2 VPD-CBS digital data package metadata is based on reporting templates available for each disease within the EPI-Info application. A full list of variables used for data collection that are included in the package can be viewed in the [surveillance data elements](https://drive.google.com/file/d/1IL2fRyBcVI5IP-cTrwQW9dEqry7RI5dz/view?usp=sharing) document. In addition to the data collection components associated with this package, a number of outputs have been created and are described in more detail in the _**Dashboard Design Summary**_ section of this document.
 
 In the development of this configuration package, an effort has been made to follow UiO’s [general design principles](https://who.dhis2.org/documentation/general_design_principles.html) and a common [naming convention](https://who.dhis2.org/documentation/naming_convention.html).
 
 The VPD-CBS digital data package supports the collection of information based upon the initial clinical diagnosis that is selected. Each initial diagnosis has its own set of associated sections and variables that are displayed based upon the initial diagnosis that is selected. A listing of the program stages and program stage sections for each disease can be found in the subsequent tables within this section of the document. You can select a disease in order to be taken to its design details within the document.
 
-1. [Congenital Rubella Syndrome (CRS)](#crs)
-2. [Invasive Bacterial Vaccine Preventable Disease (IBVPD)](#ibvpd)
-3. [Measles/Rubella](#measlesrubella)
-4. [Meningitis](#meningitis)
-5. [Neonatal Tetanus](#neonatal_tetanus)
-6. [Polio (Acute Flaccid Paralysis)](#afppolio)
-7. [Rotavirus](#rotavirus)
-8. [Rotavirus Impact](#rotavirus_impact)
-9. [Yellow Fever](#yellow_fever)
+1. [Congenital Rubella Syndrome (CRS)](#cbs_crs)
+2. [Invasive Bacterial Vaccine Preventable Disease (IBVPD)](#cbs_ibvpd)
+3. [Measles/Rubella](#cbs_measles_rubella)
+4. [Meningitis](#cbs_meningitis)
+5. [Neonatal Tetanus](#cbs_neonatal_tetanus)
+6. [Polio (Acute Flaccid Paralysis)](#cbs_afppolio)
+7. [Rotavirus](#cbs_rotavirus)
+8. [Rotavirus Impact](#cbs_rotavirus_impact)
+9. [Yellow Fever](#cbs_yellow_fever)
 
-### CRS
 
-| Stage | Description |
-|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Enrollment details Attributes | The Tracked Entity is the case, which is represented by a Tracked Entity Type of ‘person.’ Cases are uniquely identified by the Disease specific Epid Number that is assigned to them. This number is a combination of their Epid Number and the disease identified during their initial diagnosis. Enrollment date = Date of notification Incident date = Date of symptoms onset Attributes include basic personal information and unique case identifiers. The attributes within this program include: System Generated Case ID Epid number First Name Last Name Date of birth Age (Years) Age (Months) Sex Home address Village/Neighbourhood Town/City District of residence Province of residence Telephone (local) Workplace/school physical address Facility contact number First name (parent or carer) Last name (parent or carer) Clinical diagnosis Disease specific Epid Number |
-| Stage 1: Diagnostic & Clinical Information | This stage records a suspected case’s clinical details and admission information, signs and symptoms, vaccination history, notification information and outcome. |
-| Stage 2: Lab Request [repeatable] | The lab request records details related to any specimens that are being sent to the lab for processing. The information provided here can help lab personnel prioritize lab tests when resources are limited. The person entering this data could be the same person who registered the suspected case and recorded the patient’s clinical exam and exposures; or may be other personnel charged with making lab requests. |
-| Stage 3: Specimen Tracking [repeatable] | Specimen tracking records when lab specimen’s sent for processing were received at various lab levels. |
-| Stage 4: Laboratory Result [repeatable] | The lab results stage records the specimen type and results from laboratory testing. It can be done directly at the lab or as secondary data entry. This stage is repeatable as samples for a given case may be tested multiple times (i.e. in the case of an inconclusive laboratory results, a new lab test can be conducted and results recorded) and/or multiple samples may also need to be processed. |
-| Stage 5: Final Classification | The final classification records the final confirmed classification of the case as it relates to the initial diagnosis. |
-
-### IBVPD
+### CRS { #cbs_crs }
 
 | Stage | Description |
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -104,7 +94,7 @@ The VPD-CBS digital data package supports the collection of information based up
 | Stage 4: Laboratory Result [repeatable] | The lab results stage records the specimen type and results from laboratory testing. It can be done directly at the lab or as secondary data entry. This stage is repeatable as samples for a given case may be tested multiple times (i.e. in the case of an inconclusive laboratory results, a new lab test can be conducted and results recorded) and/or multiple samples may also need to be processed. |
 | Stage 5: Final Classification | The final classification records the final confirmed classification of the case as it relates to the initial diagnosis. |
 
-### Measles/Rubella
+### IBVPD { #cbs_ibvpd }
 
 | Stage | Description |
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -115,7 +105,7 @@ The VPD-CBS digital data package supports the collection of information based up
 | Stage 4: Laboratory Result [repeatable] | The lab results stage records the specimen type and results from laboratory testing. It can be done directly at the lab or as secondary data entry. This stage is repeatable as samples for a given case may be tested multiple times (i.e. in the case of an inconclusive laboratory results, a new lab test can be conducted and results recorded) and/or multiple samples may also need to be processed. |
 | Stage 5: Final Classification | The final classification records the final confirmed classification of the case as it relates to the initial diagnosis. |
 
-### Meningitis
+### Measles/Rubella { #cbs_measles_rubella }
 
 | Stage | Description |
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -126,7 +116,7 @@ The VPD-CBS digital data package supports the collection of information based up
 | Stage 4: Laboratory Result [repeatable] | The lab results stage records the specimen type and results from laboratory testing. It can be done directly at the lab or as secondary data entry. This stage is repeatable as samples for a given case may be tested multiple times (i.e. in the case of an inconclusive laboratory results, a new lab test can be conducted and results recorded) and/or multiple samples may also need to be processed. |
 | Stage 5: Final Classification | The final classification records the final confirmed classification of the case as it relates to the initial diagnosis. |
 
-### Neonatal Tetanus
+### Meningitis { #cbs_meningitis }
 
 | Stage | Description |
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -137,7 +127,7 @@ The VPD-CBS digital data package supports the collection of information based up
 | Stage 4: Laboratory Result [repeatable] | The lab results stage records the specimen type and results from laboratory testing. It can be done directly at the lab or as secondary data entry. This stage is repeatable as samples for a given case may be tested multiple times (i.e. in the case of an inconclusive laboratory results, a new lab test can be conducted and results recorded) and/or multiple samples may also need to be processed. |
 | Stage 5: Final Classification | The final classification records the final confirmed classification of the case as it relates to the initial diagnosis. |
 
-## AFP/Polio
+### Neonatal Tetanus { #cbs_neonatal_tetanus }
 
 | Stage | Description |
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -148,7 +138,7 @@ The VPD-CBS digital data package supports the collection of information based up
 | Stage 4: Laboratory Result [repeatable] | The lab results stage records the specimen type and results from laboratory testing. It can be done directly at the lab or as secondary data entry. This stage is repeatable as samples for a given case may be tested multiple times (i.e. in the case of an inconclusive laboratory results, a new lab test can be conducted and results recorded) and/or multiple samples may also need to be processed. |
 | Stage 5: Final Classification | The final classification records the final confirmed classification of the case as it relates to the initial diagnosis. |
 
-## Rotavirus
+## AFP/Polio { #cbs_afppolio }
 
 | Stage | Description |
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -159,7 +149,18 @@ The VPD-CBS digital data package supports the collection of information based up
 | Stage 4: Laboratory Result [repeatable] | The lab results stage records the specimen type and results from laboratory testing. It can be done directly at the lab or as secondary data entry. This stage is repeatable as samples for a given case may be tested multiple times (i.e. in the case of an inconclusive laboratory results, a new lab test can be conducted and results recorded) and/or multiple samples may also need to be processed. |
 | Stage 5: Final Classification | The final classification records the final confirmed classification of the case as it relates to the initial diagnosis. |
 
-## Rotavirus Impact
+## Rotavirus { #cbs_rotavirus }
+
+| Stage | Description |
+|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Enrollment details Attributes | The Tracked Entity is the case, which is represented by a Tracked Entity Type of ‘person.’ Cases are uniquely identified by the Disease specific Epid Number that is assigned to them. This number is a combination of their Epid Number and the disease identified during their initial diagnosis. Enrollment date = Date of notification Incident date = Date of symptoms onset Attributes include basic personal information and unique case identifiers. The attributes within this program include: System Generated Case ID Epid number First Name Last Name Date of birth Age (Years) Age (Months) Sex Home address Village/Neighbourhood Town/City District of residence Province of residence Telephone (local) Workplace/school physical address Facility contact number First name (parent or carer) Last name (parent or carer) Clinical diagnosis Disease specific Epid Number |
+| Stage 1: Diagnostic & Clinical Information | This stage records a suspected case’s clinical details and admission information, signs and symptoms, vaccination history, notification information and outcome. |
+| Stage 2: Lab Request [repeatable] | The lab request records details related to any specimens that are being sent to the lab for processing. The information provided here can help lab personnel prioritize lab tests when resources are limited. The person entering this data could be the same person who registered the suspected case and recorded the patient’s clinical exam and exposures; or may be other personnel charged with making lab requests. |
+| Stage 3: Specimen Tracking [repeatable] | Specimen tracking records when lab specimen’s sent for processing were received at various lab levels. |
+| Stage 4: Laboratory Result [repeatable] | The lab results stage records the specimen type and results from laboratory testing. It can be done directly at the lab or as secondary data entry. This stage is repeatable as samples for a given case may be tested multiple times (i.e. in the case of an inconclusive laboratory results, a new lab test can be conducted and results recorded) and/or multiple samples may also need to be processed. |
+| Stage 5: Final Classification | The final classification records the final confirmed classification of the case as it relates to the initial diagnosis. |
+
+## Rotavirus Impact { #cbs_rotavirus_impact }
 
 | Stage | Description |
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -170,7 +171,7 @@ The VPD-CBS digital data package supports the collection of information based up
 | Stage 4: Laboratory Result [repeatable] | The lab results stage records the specimen type and results from laboratory testing. It can be done directly at the lab or as secondary data entry. This stage is repeatable as samples for a given case may be tested multiple times (i.e. in the case of an inconclusive laboratory results, a new lab test can be conducted and results recorded) and/or multiple samples may also need to be processed. |
 | Stage 5: Final Classification | The final classification records the final confirmed classification of the case as it relates to the initial diagnosis. |
 
-## Yellow Fever
+## Yellow Fever { #cbs_yellow_fever }
 
 | Stage | Description |
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -207,15 +208,15 @@ Currently, only users assigned to the CBS data capture group will have access to
 
 Integrated dashboards for each disease have been created. Please select a link below for a description of the corresponding dashboard:
 
-1. [Congenital Rubella Syndrome (CRS)](#crs)
-2. [Invasive Bacterial Vaccine Preventable Disease (IBVPD)](#ibvpd)
-3. [Measles/Rubella](#measlesrubella)
-4. [Meningitis](#meningitis)
-5. [Neonatal Tetanus](#neonatal_tetanus)
-6. [Polio (Acute Flaccid Paralysis)](#afppolio)
-7. [Rotavirus](#rotavirus)
-8. [Rotavirus Impact](#rotavirus_impact)
-9. [Yellow Fever](#yellow_fever)
+1. [Congenital Rubella Syndrome (CRS)](#cbs_crs)
+2. [Invasive Bacterial Vaccine Preventable Disease (IBVPD)](#cbs_ibvpd)
+3. [Measles/Rubella](#cbs_measlesrubella)
+4. [Meningitis](#cbs_meningitis)
+5. [Neonatal Tetanus](#cbs_neonatal_tetanus)
+6. [Polio (Acute Flaccid Paralysis)](#cbs_afppolio)
+7. [Rotavirus](#cbs_rotavirus)
+8. [Rotavirus Impact](#cbs_rotavirus_impact)
+9. [Yellow Fever](#cbs_yellow_fever)
 10. Alerts/Outbreak
 11. Comparative Analysis
 
