@@ -138,7 +138,7 @@ The VPD-CBS digital data package supports the collection of information based up
 | Stage 4: Laboratory Result [repeatable] | The lab results stage records the specimen type and results from laboratory testing. It can be done directly at the lab or as secondary data entry. This stage is repeatable as samples for a given case may be tested multiple times (i.e. in the case of an inconclusive laboratory results, a new lab test can be conducted and results recorded) and/or multiple samples may also need to be processed. |
 | Stage 5: Final Classification | The final classification records the final confirmed classification of the case as it relates to the initial diagnosis. |
 
-## AFP/Polio { #cbs_afppolio }
+### AFP/Polio { #cbs_afppolio }
 
 | Stage | Description |
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -149,7 +149,7 @@ The VPD-CBS digital data package supports the collection of information based up
 | Stage 4: Laboratory Result [repeatable] | The lab results stage records the specimen type and results from laboratory testing. It can be done directly at the lab or as secondary data entry. This stage is repeatable as samples for a given case may be tested multiple times (i.e. in the case of an inconclusive laboratory results, a new lab test can be conducted and results recorded) and/or multiple samples may also need to be processed. |
 | Stage 5: Final Classification | The final classification records the final confirmed classification of the case as it relates to the initial diagnosis. |
 
-## Rotavirus { #cbs_rotavirus }
+### Rotavirus { #cbs_rotavirus }
 
 | Stage | Description |
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -160,7 +160,7 @@ The VPD-CBS digital data package supports the collection of information based up
 | Stage 4: Laboratory Result [repeatable] | The lab results stage records the specimen type and results from laboratory testing. It can be done directly at the lab or as secondary data entry. This stage is repeatable as samples for a given case may be tested multiple times (i.e. in the case of an inconclusive laboratory results, a new lab test can be conducted and results recorded) and/or multiple samples may also need to be processed. |
 | Stage 5: Final Classification | The final classification records the final confirmed classification of the case as it relates to the initial diagnosis. |
 
-## Rotavirus Impact { #cbs_rotavirus_impact }
+### Rotavirus Impact { #cbs_rotavirus_impact }
 
 | Stage | Description |
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -171,7 +171,7 @@ The VPD-CBS digital data package supports the collection of information based up
 | Stage 4: Laboratory Result [repeatable] | The lab results stage records the specimen type and results from laboratory testing. It can be done directly at the lab or as secondary data entry. This stage is repeatable as samples for a given case may be tested multiple times (i.e. in the case of an inconclusive laboratory results, a new lab test can be conducted and results recorded) and/or multiple samples may also need to be processed. |
 | Stage 5: Final Classification | The final classification records the final confirmed classification of the case as it relates to the initial diagnosis. |
 
-## Yellow Fever { #cbs_yellow_fever }
+### Yellow Fever { #cbs_yellow_fever }
 
 | Stage | Description |
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
