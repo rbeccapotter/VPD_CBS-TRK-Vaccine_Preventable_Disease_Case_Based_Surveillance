@@ -1,4 +1,4 @@
-# VPD-CBS Tracker Installation Annex
+# VPD-CBS Tracker Installation Annex { #vpd-cbs-installation }
 
 Package Version 1.0
 DHIS2 Version compatibility 2.34.1 and above
