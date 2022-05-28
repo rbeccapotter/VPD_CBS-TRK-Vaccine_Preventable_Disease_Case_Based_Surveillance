@@ -2,17 +2,23 @@
 
 ## Introduction
 
-The Vaccine Preventable Disease (VPD) Case Based Surveillance (CBS) system design document provides an overview of the conceptual design used to configure the VPD-CBS digital data package in DHIS2. The VPD-CBS digital data package is being rolled out in a series of phases. This design document covers phase 1 of this process. In phase 1, the VPD-CBS digital data package is meant first and foremost as an Epi-Info replacement, mainly within AFRO countries. It is recognized in this phase that local operational workflows, such as case notification forms, will not be part of this release. Despite this, moving the current EPI-Info VPD-CBS databases to DHIS2 will have several advantages. This includes:
+The Vaccine Preventable Disease (VPD) Case Based Surveillance (CBS) system is designed to integrate the reporting of nine (9) vaccine-preventable diseases, link laboratory results with the case file, generate alerts, and facilitate analysis of case-basedd data alongside weekly reporting through the complementary aggregate IDSR package. The integrated VPD case-based system in DHIS2 has several advantages over traditionally centralized (national level) reporting into disease-specific forms:
 
-1. All reported diseases being included in one place, rather than managing and merging different databases for entry, analysis and administration
-2. Allowing staff to remotely access details related to a case they are working on (ie. lab staff, clinical staff)
-3. Allowing results to be synchronized to a regional platform through sending data, rather than through manual processes
+1. Integrated system across diseases: All reported diseases being included in one place, rather than managing and merging different databases for entry, analysis and administration. This approach is more sustainable in most settings, as a single database can be managed across diseases. 
+2. Increased timeliness through decentralized case-reporting: facilities can immediately report on a suspected case and laboratory users or users at higher levels can apend the laboratory results and final classification to the case file in DHIS2 as data becomes available at each level;
+3. Improved access at district & facility levels: Allowing staff to remotely access details related to a case they are working on (ie. lab staff, clinical staff)
+4. Reduced burden on upwards reporting: Allowing case reports captured in the national DHIS2 system to be syncronized to a regional platform through electronic data exchange, rather than through manual processes. 
 
-This document is intended for use by DHIS2 implementers at country and regional level to be able to support implementation and localisation of the package. The VPD-CBS metadata package can be adapted to local needs and national guidelines; however any key elements that are required by the regional platform will be mandatory and should therefore not be modified.
+For AFRO Member States, the package also serves as a replacement for centralized, offline reporting into the Epi-Info databse that has traditionally been used for submitting case reports to the Regional Office. Additional data exchange apps have been developed to facilitate pushing case reports from a country's DHIS2 instance to the AFRO regional surveillance platform (also using DHIS2). As such, data elements have been aligned to the standard VPD case reports used across the region. The package can be adapted to local needs and national guidelines; however any key elements that are required by the regional platform will be mandatory and should therefore not be modified.
+
+For non-AFRO Member States, the package can be further modified to include/exclude diseases and data variables from the tracker program according to national policies on reportable and notifiable diseases. The overall tracker program design for linking case reporting with laboratory results and classification is flexible for national and regional modification.
+
+### Acknowledgements
+This package was developed according to standards-based content provided by and in close collaboration with the WHO World Health Emergencies Programme (WHE) and WHO Regional Office for Africa (AFRO). A global expert advisory group consisting of subject matter experts from WHO and US CDC was convened to develop requirements, provide feedback to the system design and ensure the package is designed to meet global standards for case-based surveillance of epidemic prone and vaccine-preventable diseases. HISP extends its gratitude to Gavi, the Vaccine Alliance for supporting the development of this package as a global good and its implementation at country level. 
 
 ## Diseases Covered
 
-This package is meant to serve integrated workflows of 9 different diseases within the same system and is meant as a more sustainable approach than having different systems or databases for each individual disease. The diseases covered in this package include:
+This package integrates reporting workflows for 9 different vaccine-preventable diseases within the same system. This is typically a more sustainable approach compared to having different systems or databases for each individual disease. The diseases covered in this package include:
 
 1. Congenital Rubella Syndrome (CRS)
 2. Invasive Bacterial Vaccine Preventable Disease (IBVPD)
@@ -23,6 +29,8 @@ This package is meant to serve integrated workflows of 9 different diseases with
 7. Rotavirus
 8. Rotavirus Impact
 9. Yellow Fever
+
+The package design is *not* inherently limited to vaccine-preventable disease reporting;  it can be adapted and customized for country implementation to incorporate additional reporting of notifiable, reportable or other epidemic-prone diseases according to country policies. 
 
 ## Phases of Development
 
