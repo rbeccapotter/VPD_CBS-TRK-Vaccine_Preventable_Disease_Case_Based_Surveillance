@@ -32,20 +32,6 @@ This package integrates reporting workflows for 9 different vaccine-preventable 
 
 The package design is *not* inherently limited to vaccine-preventable disease reporting;  it can be adapted and customized for country implementation to incorporate additional reporting of notifiable, reportable or other epidemic-prone diseases according to country policies. 
 
-## Phases of Development
-
-This use case is divided into 2 development phases as it relates to case based surveillance, with this document covering phase 1 of the initial scope of requirements. In broad terms, the phases are divided into the following
-
-### Phase 1
-
-* Use of DHIS2 to replace all current functionality and workflow of AFRO VPD surveillance EPI Info systems
-* Phase out use of EPI Info in AFRO countries; implement DHIS2 as the EPI Info replacement
-
-### Phase 2
-
-* Strengthen response and management of public health actions through the support of local workflows, access control and functionality for identification and management of outbreaks directly within DHIS2
-* Expand availability, guidance and implementation support for non-AFRO countries
-
 ## Program Description
 
 All of the programs in the VPD-CBS package have a similar design, however different sections and variables are attached to each disease **_based on the initial diagnosis that is selected during registration_**. The sections attached to each program are described in the [System Design Summary](#system-design-summary) section of this document. For a full listing of the variables for each disease, please refer to the [surveillance data elements](https://drive.google.com/file/d/1IL2fRyBcVI5IP-cTrwQW9dEqry7RI5dz/view?usp=sharing) document. The program is made up of the following stages in its design:
@@ -235,3 +221,12 @@ A complete list of program rules is inluded in the metadata reference file for t
 ## Program Indicators
 
 A complete list of 424 program indicators is inluded in the metadata reference file for the package, accessed at [dhis2.org/who-package-downloads](https://dhis2.org/who-package-downloads)
+
+# Implementation
+
+For AFRO Member States, this package is optimized and approved by the RO to replace the existing AFRO VPD surveillance EPI Info system with DHIS2 VPD surveillance package. The package meets the functional requirements, workflows and mandatory data variables for reporting that have previously been done in EPI Info. Countries using this package can push their case-based data to the AFRO regional respository directly from the national DHIS2 instance where the VPD package is installed & used. Thus, as part of country implementation in AFRO Member States, discussions around how and when to phase out the use of the EPI Info reporting system are recommendec to reduce duplicate data entry and strengthen feedback loops & data quality in the DHIS2-based system.
+
+Extension and expansion of the DHIS2 VPD case surveillance system in future phases is anticipated to:
+* Strengthen response and management of public health actions through the support of local workflows for case notification
+* Enable the identification and management of outbreaks based on the VPD case reporting system contained in the package.
+
