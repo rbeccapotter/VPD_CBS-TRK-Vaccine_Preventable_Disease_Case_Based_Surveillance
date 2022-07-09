@@ -37,11 +37,29 @@ Standardized data variables are incorporated into the VPD case-based tracker pro
 The package design is *not* inherently limited to vaccine-preventable disease reporting;  it can be adapted and customized for country implementation to incorporate additional reporting of notifiable, reportable or other epidemic-prone diseases according to country policies. 
 
 ### Conceptual Workflow
-The VPD CBS tracker program supports the collection of information based upon the initial clinical diagnosis that is selected upon enrollment of a new suspected case. **Program rules** are used to show program stages and data variables according to the initial clinical diagnosis of a suspected disease. 
+The VPD CBS tracker program supports the collection of information based upon the initial clinical diagnosis that is selected upon enrollment of a new suspected case. **Program rules** are used to show program stages and data variables according to the initial clinical diagnosis of a suspected disease. The conceptual workflow outlined here is not necessarily reflective of each of the individual interactions that may occur within a health system when capturing the data and managing information related to a particular case in field conditions. 
 
 **Centralized reporting**
+The workflow outlined below illustrates the processes resulting in all relevant case forms being entered into DHIS2 at a centralized level, based on multiple sources of data (e.g. clinical information captured at the facility, laboratory diagnosis, additional details that may be completed by surveillance officers during case investigation). 
+
+This workflow is most closely aligned to the existing cenralized reporting system using Epi-Info. While this workflow is the most straight-forward to replace in a given country, the disadvantage of centralized reporting is that there can be long delays between the time a suspected case is notified from a health facility to the time the completed case details are entered into the systems to generate outbreak alerts or enable analysis. 
+
+**_All diseases excluding Neonatal Tetanus_**
+The possibility for laboratory specimen collection and lab diagnosis data to be attached to the case record is incorporated into the program design for all diseases *excluding Neonatal Tetanus (NT)*.
+
+![workflow for all diseases](resources/images/workflow1.png)
+
+**_Neonatal Tetanus_**
+The workflow for Neonatal Tetanus excludes laboratory testing. 
+
+![workflow for neonatal tetanus](resources/images/workflow2.png)
 
 **Decentralized reporting**
+While centralized reporting of case-based data for VPDs is typical for reporting upwards (e.g. to WHO for IHR compliance or other bodies according to data sharing agreements), many countries have already begun to implement *decentralized* electronic case-based disease surveillance using DHIS2. 
+
+In a decentralized workflow, the configuration of **user groups** allows users and actors at various levels of the health system to apend daata to a shared electronic case record in DHIS2. For example, a health facility user may be responsible for notifying the case by completing an electronic case notification form, entering the clinical details of the suspected case, and completing the lab specimen request form. Once lab results are available for a given case (linked by a unique identifier or lab sample number), a laboratory user can enter the lab results into the Lab program stage. Depending on policies in country, another groups of users such as surveillance officers may be responsible for determining and updating the Final Classification. 
+
+One major benefit of a decentralized reporting system is timeliness of data amd availability of data in the electronic system for outbreak investigation and response. For example, facilities can report suspected cases into the DHIS2 VPD program in near real-time, enhancing the early warning function of the system. When lab results are available, the data can be added to the case record and indicators and outbreak alert thresholds configured into the system will be updated automatically. 
 
 **Dashboards & Analytical Outputs**
 Anumber of outputs have been created and are described in more detail in the _**Dashboard Design Summary**_ section of this document.
