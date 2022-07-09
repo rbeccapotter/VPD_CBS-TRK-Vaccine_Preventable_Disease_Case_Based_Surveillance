@@ -14,27 +14,44 @@ For AFRO Member States, the package also serves as a replacement for centralized
 For non-AFRO Member States, the package can be further modified to include/exclude diseases and data variables from the tracker program according to national policies on reportable and notifiable diseases. The overall tracker program design for linking case reporting with laboratory results and classification is flexible for national and regional modification.
 
 ### Acknowledgements
-This package was developed according to standards-based content provided by and in close collaboration with the WHO World Health Emergencies Programme (WHE) and WHO Regional Office for Africa (AFRO). A global expert advisory group consisting of subject matter experts from WHO and US CDC was convened to develop requirements, provide feedback to the system design and ensure the package is designed to meet global standards for case-based surveillance of epidemic prone and vaccine-preventable diseases. HISP extends its gratitude to Gavi, the Vaccine Alliance for supporting the development of this package as a global good and its implementation at country level. 
+This package was developed according to standards-based content provided by and in close collaboration with the WHO World Health Emergencies Programme (WHE) and WHO Regional Office for Africa (AFRO). A global expert advisory group consisting of subject matter experts from WHO and US CDC was convened to develop requirements, provide feedback to the system design and ensure the package is designed to meet global standards for case-based surveillance of epidemic prone and vaccine-preventable diseases. HISP extends its gratitude to Gavi, the Vaccine Alliance for supporting the development of this package as a global good and implementation efforts at country level. 
 
-## Diseases Covered
+## Use case
+The DHIS2 VPD VBS package metadata is based on reporting templates available for each disease within the EPI-Info application. 
 
-This package integrates reporting workflows for 9 different vaccine-preventable diseases within the same system. This is typically a more sustainable approach compared to having different systems or databases for each individual disease. The diseases covered in this package include:
+### Diseases Covered
+This package integrates case-based reporting workflows for 9 different vaccine-preventable diseases within the same system. This is typically a more sustainable approach compared to having different systems or databases for each individual disease. Data variables per diseases have been configured as Data Elements and Tracked Antity Attributes in the DHIS2 tracker program according to a core list of [surveillance data elements](https://drive.google.com/file/d/1IL2fRyBcVI5IP-cTrwQW9dEqry7RI5dz/view?usp=sharing) provided by WHO Health Emergencies & the WHO Regional Office for Africa.
 
-1. Congenital Rubella Syndrome (CRS)
-2. Invasive Bacterial Vaccine Preventable Disease (IBVPD)
-3. Measles/Rubella
-4. Meningitis
-5. Neonatal Tetanus
-6. Polio (Acute Flaccid Paralysis)
-7. Rotavirus
-8. Rotavirus Impact
-9. Yellow Fever
+Standardized data variables are incorporated into the VPD case-based tracker program for the following diseases. You can select a disease in order to be taken to its design details within the document. 
+
+1. [Congenital Rubella Syndrome (CRS)](#cbs_crs)
+2. [Invasive Bacterial Vaccine Preventable Disease (IBVPD)](#cbs_ibvpd)
+3. [Measles/Rubella](#cbs_measles_rubella)
+4. [Meningitis](#cbs_meningitis)
+5. [Neonatal Tetanus](#cbs_neonatal_tetanus)
+6. [Polio (Acute Flaccid Paralysis)](#cbs_afppolio)
+7. [Rotavirus](#cbs_rotavirus)
+8. [Rotavirus Impact](#cbs_rotavirus_impact)
+9. [Yellow Fever](#cbs_yellow_fever)
 
 The package design is *not* inherently limited to vaccine-preventable disease reporting;  it can be adapted and customized for country implementation to incorporate additional reporting of notifiable, reportable or other epidemic-prone diseases according to country policies. 
 
-## Program Description
+### Conceptual Workflow
+The VPD CBS tracker program supports the collection of information based upon the initial clinical diagnosis that is selected upon enrollment of a new suspected case. **Program rules** are used to show program stages and data variables according to the initial clinical diagnosis of a suspected disease. 
 
-All of the programs in the VPD-CBS package have a similar design, however different sections and variables are attached to each disease **_based on the initial diagnosis that is selected during registration_**. The sections attached to each program are described in the [System Design Summary](#system-design-summary) section of this document. For a full listing of the variables for each disease, please refer to the [surveillance data elements](https://drive.google.com/file/d/1IL2fRyBcVI5IP-cTrwQW9dEqry7RI5dz/view?usp=sharing) document. The program is made up of the following stages in its design:
+**Centralized reporting**
+
+**Decentralized reporting**
+
+**Dashboards & Analytical Outputs**
+Anumber of outputs have been created and are described in more detail in the _**Dashboard Design Summary**_ section of this document.
+
+
+### Intended users
+
+
+## Program Structure
+All of the programs in the VPD-CBS package have a similar design, however different sections and variables are attached to each disease **_based on the initial diagnosis that is selected during registration_**. The program is made up of the following stages in its design:
 
 1. Enrollment Details
 2. Diagnostic & Clinical Information
@@ -43,7 +60,7 @@ All of the programs in the VPD-CBS package have a similar design, however differ
 5. Laboratory Result
 6. Final Classification
 
-Note that Neonatal Tetanus has a slightly different configuration, as it only includes the following stages in its design:
+Note suspected Neonatal Tetanus cases do not require lab specimen collection or laboratory confirmation. Therefore, program rules are used to show only the following program stages for NT cases: 
 
 1. Enrollment Details
 2. Diagnostic & Clinical Information
@@ -57,25 +74,6 @@ Note that Neonatal Tetanus has a slightly different configuration, as it only in
 | Stage 3: Specimen Tracking [repeatable] | Specimen tracking records when lab specimen’s sent for processing were received at various lab levels. |
 | Stage 4: Laboratory Result [repeatable] | The lab results stage records the specimen type and results from laboratory testing. It can be done directly at the lab or as secondary data entry. This stage is repeatable as samples for a given case may be tested multiple times (i.e. in the case of an inconclusive laboratory results, a new lab test can be conducted and results recorded) and/or multiple samples may also need to be processed. |
 | Stage 5: Final Classification | The final classification records the final confirmed classification of the case as it relates to the initial diagnosis. |
-
-## System Design Summary
-
-The DHIS2 VPD-CBS digital data package metadata is based on reporting templates available for each disease within the EPI-Info application. A full list of variables used for data collection that are included in the package can be viewed in the [surveillance data elements](https://drive.google.com/file/d/1IL2fRyBcVI5IP-cTrwQW9dEqry7RI5dz/view?usp=sharing) document. In addition to the data collection components associated with this package, a number of outputs have been created and are described in more detail in the _**Dashboard Design Summary**_ section of this document.
-
-In the development of this configuration package, an effort has been made to follow UiO’s [general design principles](https://who.dhis2.org/documentation/general_design_principles.html) and a common [naming convention](https://who.dhis2.org/documentation/naming_convention.html).
-
-The VPD-CBS digital data package supports the collection of information based upon the initial clinical diagnosis that is selected. Each initial diagnosis has its own set of associated sections and variables that are displayed based upon the initial diagnosis that is selected. A listing of the program stages and program stage sections for each disease can be found in the subsequent tables within this section of the document. You can select a disease in order to be taken to its design details within the document.
-
-1. [Congenital Rubella Syndrome (CRS)](#cbs_crs)
-2. [Invasive Bacterial Vaccine Preventable Disease (IBVPD)](#cbs_ibvpd)
-3. [Measles/Rubella](#cbs_measles_rubella)
-4. [Meningitis](#cbs_meningitis)
-5. [Neonatal Tetanus](#cbs_neonatal_tetanus)
-6. [Polio (Acute Flaccid Paralysis)](#cbs_afppolio)
-7. [Rotavirus](#cbs_rotavirus)
-8. [Rotavirus Impact](#cbs_rotavirus_impact)
-9. [Yellow Fever](#cbs_yellow_fever)
-
 
 ### CRS { #cbs_crs }
 
@@ -176,18 +174,6 @@ The VPD-CBS digital data package supports the collection of information based up
 | Stage 4: Laboratory Result [repeatable] | The lab results stage records the specimen type and results from laboratory testing. It can be done directly at the lab or as secondary data entry. This stage is repeatable as samples for a given case may be tested multiple times (i.e. in the case of an inconclusive laboratory results, a new lab test can be conducted and results recorded) and/or multiple samples may also need to be processed. |
 | Stage 5: Final Classification | The final classification records the final confirmed classification of the case as it relates to the initial diagnosis. |
 
-## Program Workflow
-
-As phase 1 of development is intended as an EPI Info replacement, the workflow that is outlined here is not necessarily reflective of each of the individual interactions that may occur within a health system when capturing the data and managing information related to a particular case in field conditions. The workflow outlined below is therefore directly related to the processes resulting in a completed notification/reporting form being entered into DHIS2.
-
-**_All diseases excluding Neonatal Tetanus_**
-
-![workflow for all diseases](resources/images/workflow1.png)
-
-**_Neonatal Tetanus_**
-
-![workflow for neonatal tetanus](resources/images/workflow2.png)
-
 ## User Groups
 
 The following user groups are included in the metadata package:
@@ -220,11 +206,11 @@ A complete list of program rules is inluded in the metadata reference file for t
 
 ## Program Indicators
 
-A complete list of 424 program indicators is inluded in the metadata reference file for the package, accessed at [dhis2.org/who-package-downloads](https://dhis2.org/who-package-downloads)
+A complete list of program indicators is inluded in the metadata reference file for the package, accessed at [dhis2.org/who-package-downloads](https://dhis2.org/who-package-downloads)
 
-# Implementation
+# Implementation & Local Adaptation 
 
-For AFRO Member States, this package is optimized and approved by the RO to replace the existing AFRO VPD surveillance EPI Info system with DHIS2 VPD surveillance package. The package meets the functional requirements, workflows and mandatory data variables for reporting that have previously been done in EPI Info. Countries using this package can push their case-based data to the AFRO regional respository directly from the national DHIS2 instance where the VPD package is installed & used. Thus, as part of country implementation in AFRO Member States, discussions around how and when to phase out the use of the EPI Info reporting system are recommendec to reduce duplicate data entry and strengthen feedback loops & data quality in the DHIS2-based system.
+For AFRO Member States, this package is optimized and approved by the Regional Office to replace the existing AFRO VPD surveillance EPI Info system with DHIS2 VPD surveillance package. The package meets the functional requirements, workflows and mandatory data variables for reporting that have previously been done in EPI Info. Countries using this package can push their case-based data to the AFRO regional respository directly from the national DHIS2 instance where the VPD package is installed & used. Thus, as part of country implementation in AFRO Member States, discussions around how and when to phase out the use of the EPI Info reporting system are recommendec to reduce duplicate data entry and strengthen feedback loops & data quality in the DHIS2-based system.
 
 Extension and expansion of the DHIS2 VPD case surveillance system in future phases is anticipated to:
 * Strengthen response and management of public health actions through the support of local workflows for case notification
