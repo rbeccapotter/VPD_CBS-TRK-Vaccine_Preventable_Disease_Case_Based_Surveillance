@@ -2,8 +2,9 @@
 
 ## Introduction
 
-The Vaccine Preventable Disease (VPD) Case Based Surveillance (CBS) system is designed to integrate the reporting of nine (9) vaccine-preventable diseases, link laboratory results with the case file, generate automated alerts of possible diseease outbreaks based on thresholds, and facilitate analysis of case-based data alongside aggregated facility-based reporting through the complementary aggregate disease surveillance (IDSR) package. The integrated VPD case-based system in DHIS2 has several advantages over traditionally centralized (national level) reporting into disease-specific forms:
+The integrated Vaccine Preventable Disease (VPD) Case Based Surveillance (CBS) system is designed to facilitate reporting of nine (9) vaccine-preventable diseases in an electronic system, link laboratory results with the case file, generate automated alerts of possible diseease outbreaks based on thresholds, and facilitate analysis of case-based data alongside aggregated facility-based reporting to inform action. The integrated disease surveillance strategy has been adopted widely in recent decades to promote rational and efficient use of resources by streanlining common surveillance activities and functions ([WHO](https://apps.who.int/iris/bitstream/handle/10665/325015/WHO-AF-WHE-CPI-05.2019-eng.pdf)). An integrated information system design approach to case-based disease surveillance in DHIS2 capitalizes on the similarities of surveillance functions across different diseases such as case notification, sample collection, reporting, analysis and interpretation, feedback, and action -- often carried out in countries using the same structures, processes and personnel. The case-based package is designed to be implemented alongside the aggregate disease surveillance (IDSR) package for weekly/routine reporting of suspected cases and/or syndromes from health facilities on related vaccine-preventable and epidemic-prone diseases.
 
+The integrated VPD case-based system in DHIS2 has several advantages over traditionally centralized (national level) reporting into disease-specific forms:
 1. Integrated system across diseases: All reported diseases being included in one place, rather than managing and merging different databases for entry, analysis and administration. This approach is more sustainable in most settings, as a single database can be managed across diseases. 
 2. Increased timeliness through decentralized case-reporting: facilities can immediately report on a suspected case and laboratory users or users at higher levels can apend the laboratory results and final classification to the case file in DHIS2 as data becomes available at each level.
 3. Improved access at district & facility levels: Allows staff to remotely access details related to a case they are working on (ie. lab staff, clinical staff).
@@ -64,17 +65,19 @@ The workflow for Neonatal Tetanus excludes laboratory testing.
 
 ![workflow for neonatal tetanus](resources/images/workflow2.png)
 
-**Decentralized reporting**
+#### Decentralized reporting
 While centralized reporting of case-based data for VPDs is typical for reporting upwards (e.g. to WHO for IHR compliance or other bodies according to data sharing agreements), many countries have already begun to implement *decentralized* electronic case-based disease surveillance using DHIS2. 
 
 In a decentralized workflow, the configuration of **user groups** allows users and actors at various levels of the health system to apend daata to a shared electronic case record in DHIS2. For example, a health facility user may be responsible for notifying the case by completing an electronic case notification form, entering the clinical details of the suspected case, and completing the lab specimen request form. Once lab results are available for a given case (linked by a unique identifier or lab sample number), a laboratory user can enter the lab results into the Lab program stage. Depending on policies in country, another groups of users such as surveillance officers may be responsible for determining and updating the Final Classification. 
 
 One major benefit of a decentralized reporting system is timeliness of data amd availability of data in the electronic system for outbreak investigation and response. For example, facilities can report suspected cases into the DHIS2 VPD program in near real-time, enhancing the early warning function of the system. When lab results are available, the data can be added to the case record and indicators and outbreak alert thresholds configured into the system will be updated automatically. 
 
-**Dashboards & Analytical Outputs**
-A number of outputs have been created and are described in more detail in the _**Dashboard Design Summary**_ section of this document.
+### Analysis & Use 
+Surveillance data captured in the DHIS2 case-based system can be made available to users from national to district and facility levels according to the configuration of user access settings. Regardless of which level of the system data are *entered* electronically into the system, data can be made available for analysis automatically down to the level of initial reporting (i.e. facility and upwards). Triangulation of case-based data for VPDs captured in DHIS2 alongside immunization coverage rates and other data sources can be used by national immunization programme staff to identify zero-dose and under-immunized pockets of the population. 
 
-
+**Program indicators** have been configured as part of the case-based package according to disease-specific requirements, including operational indicators that are useful for planning and mobitoring response activities. In addition to pre-configured **dashboards** included in the package specific to each disease, the following dashboards incorporate data from across diseases:
+1.  CBS Alert/Outbreak dashboard: summarizes outbreak alerts (based on pre-configured thresholds for case-based data) across all VPDs included in the package at district level for rapid analysis
+2.  CBS-IDSR Comparative Dashboard: when the CBS package is installed with the aggregate surveillance (IDSR) package in DHIS2, this dashbaord enables analysis and data quality/completeness reviews across case-based and aggregate reporting flows for VPDs 
 
 ## Program Structure
 All of the programs in the VPD-CBS package have a similar design, however different sections and variables are attached to each disease **_based on the initial diagnosis that is selected during registration_**. The program is made up of the following stages in its design:
