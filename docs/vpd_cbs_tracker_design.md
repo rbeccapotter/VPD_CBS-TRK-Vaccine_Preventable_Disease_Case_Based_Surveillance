@@ -2,22 +2,32 @@
 
 ## Introduction
 
-The Vaccine Preventable Disease (VPD) Case Based Surveillance (CBS) system is designed to integrate the reporting of nine (9) vaccine-preventable diseases, link laboratory results with the case file, generate alerts, and facilitate analysis of case-basedd data alongside weekly reporting through the complementary aggregate IDSR package. The integrated VPD case-based system in DHIS2 has several advantages over traditionally centralized (national level) reporting into disease-specific forms:
+The Vaccine Preventable Disease (VPD) Case Based Surveillance (CBS) system is designed to integrate the reporting of nine (9) vaccine-preventable diseases, link laboratory results with the case file, generate automated alerts of possible diseease outbreaks based on thresholds, and facilitate analysis of case-based data alongside aggregated facility-based reporting through the complementary aggregate disease surveillance (IDSR) package. The integrated VPD case-based system in DHIS2 has several advantages over traditionally centralized (national level) reporting into disease-specific forms:
 
 1. Integrated system across diseases: All reported diseases being included in one place, rather than managing and merging different databases for entry, analysis and administration. This approach is more sustainable in most settings, as a single database can be managed across diseases. 
-2. Increased timeliness through decentralized case-reporting: facilities can immediately report on a suspected case and laboratory users or users at higher levels can apend the laboratory results and final classification to the case file in DHIS2 as data becomes available at each level;
-3. Improved access at district & facility levels: Allowing staff to remotely access details related to a case they are working on (ie. lab staff, clinical staff)
-4. Reduced burden on upwards reporting: Allowing case reports captured in the national DHIS2 system to be syncronized to a regional platform through electronic data exchange, rather than through manual processes. 
+2. Increased timeliness through decentralized case-reporting: facilities can immediately report on a suspected case and laboratory users or users at higher levels can apend the laboratory results and final classification to the case file in DHIS2 as data becomes available at each level.
+3. Improved access at district & facility levels: Allows staff to remotely access details related to a case they are working on (ie. lab staff, clinical staff).
+4. Reduced burden on upwards reporting: Enables case reports captured in the national DHIS2 system to be syncronized to a regional platform through electronic data exchange, rather than through manual processes. 
 
-For AFRO Member States, the package also serves as a replacement for centralized, offline reporting into the Epi-Info databse that has traditionally been used for submitting case reports to the Regional Office. Additional data exchange apps have been developed to facilitate pushing case reports from a country's DHIS2 instance to the AFRO regional surveillance platform (also using DHIS2). As such, data elements have been aligned to the standard VPD case reports used across the region. The package can be adapted to local needs and national guidelines; however any key elements that are required by the regional platform will be mandatory and should therefore not be modified.
+The VPD CBS package was developed in close collaboration with WHO Health Emergencies (WHE) programme and WHO Regional Office for Africa and is intended to strengthen recommendations for improving electronic disease surveillance systems as outlined in the [Technical Guidelines for Integrated Disease Surveillance and Response in the AFRO Region (2019)](https://apps.who.int/iris/bitstream/handle/10665/325015/WHO-AF-WHE-CPI-05.2019-eng.pdf). For AFRO Member States, the package also serves as a replacement for centralized, offline reporting into the Epi Info database that has traditionally been used for submitting case reports to the Regional Office. Additional data exchange apps have been developed to facilitate pushing case reports from a country's DHIS2 instance to the AFRO regional surveillance platform. As such, data elements have been aligned to the standard VPD case reports used across the region. The package can be adapted to local needs and national guidelines; however any key elements that are required by the regional platform will be mandatory and should therefore not be modified.
 
 For non-AFRO Member States, the package can be further modified to include/exclude diseases and data variables from the tracker program according to national policies on reportable and notifiable diseases. The overall tracker program design for linking case reporting with laboratory results and classification is flexible for national and regional modification.
 
 ### Acknowledgements
 This package was developed according to standards-based content provided by and in close collaboration with the WHO World Health Emergencies Programme (WHE) and WHO Regional Office for Africa (AFRO). A global expert advisory group consisting of subject matter experts from WHO and US CDC was convened to develop requirements, provide feedback to the system design and ensure the package is designed to meet global standards for case-based surveillance of epidemic prone and vaccine-preventable diseases. HISP extends its gratitude to Gavi, the Vaccine Alliance for supporting the development of this package as a global good and implementation efforts at country level. 
 
-## Use case
-The DHIS2 VPD VBS package metadata is based on reporting templates available for each disease within the EPI-Info application. 
+## System Design Overview
+
+### Use case 
+Surveillance is the ongoing systematic identification, collection, collation, analysis and interpretation of disease occurrence and public health event data, for the purposes of taking timely and robust action, such as disseminating the resulting information to the relevant people, for effective and appropriate action ([WHO](https://apps.who.int/iris/bitstream/handle/10665/325015/WHO-AF-WHE-CPI-05.2019-eng.pdf)). Surveillance is also essential for planning, implementation,
+monitoring and evaluation of public health interventions. The DHIS2 VPD case-based surveillance package supports one approach to indicator-based surveillance, which is typically characterized as structured information, reported to public health officials mostly from formal sources such as health care providers, following a standardized format or set of indicator definitions ([WHO](https://apps.who.int/iris/bitstream/handle/10665/325015/WHO-AF-WHE-CPI-05.2019-eng.pdf), [US CDC](https://www.cdc.gov/globalhealth/healthprotection/gddopscenter/how.html#:~:text=Indicator%2Dbased%20surveillance%20involves%20reports,the%20information%20obtained%20is%20standardized)). Systematic reporting of suspected cases or notifiable conditions through indicator-based surveillance forms one key component of an early warning system. 
+
+### Intended users
+Through a collaborative process of working with implementing countries and surveillance stakeholders at multiple levels of the health system, the following have been identified as users or potential users of an integrated case-based surveillance system in DHIS2:  
+* Health facility staff: facility staff are often the first to report a suspected case through existing passive surveillance systems according to national polivies on reportable diseases and conditions; facility staff may also be engaged in the follow-up of the case's medical care and outcome.
+* District surveillance officers: surveillance officers at district or other sub-national administrative levels may be responsible for completing case investigations based on suspected case reports from facilities; following up case notifications and analyzing disease trends and outbreak alerts for their administrative area. 
+* Public health staff: receive alerts for potential disease outbreaks generated by the system; analyze surveillance data for trends that may indicate possible disease outbreaks and plan response activities where appropriate. 
+* Laboratory staff: receive electronic specimen request forms; may be involved in entering or uploading laboratory results to a longitudinal case record.
 
 ### Diseases Covered
 This package integrates case-based reporting workflows for 9 different vaccine-preventable diseases within the same system. This is typically a more sustainable approach compared to having different systems or databases for each individual disease. Data variables per diseases have been configured as Data Elements and Tracked Antity Attributes in the DHIS2 tracker program according to a core list of [surveillance data elements](https://drive.google.com/file/d/1IL2fRyBcVI5IP-cTrwQW9dEqry7RI5dz/view?usp=sharing) provided by WHO Health Emergencies & the WHO Regional Office for Africa.
@@ -39,7 +49,7 @@ The package design is *not* inherently limited to vaccine-preventable disease re
 ### Conceptual Workflow
 The VPD CBS tracker program supports the collection of information based upon the initial clinical diagnosis that is selected upon enrollment of a new suspected case. **Program rules** are used to show program stages and data variables according to the initial clinical diagnosis of a suspected disease. The conceptual workflow outlined here is not necessarily reflective of each of the individual interactions that may occur within a health system when capturing the data and managing information related to a particular case in field conditions. 
 
-**Centralized reporting**
+#### **Centralized reporting**
 The workflow outlined below illustrates the processes resulting in all relevant case forms being entered into DHIS2 at a centralized level, based on multiple sources of data (e.g. clinical information captured at the facility, laboratory diagnosis, additional details that may be completed by surveillance officers during case investigation). 
 
 This workflow is most closely aligned to the existing cenralized reporting system using Epi-Info. While this workflow is the most straight-forward to replace in a given country, the disadvantage of centralized reporting is that there can be long delays between the time a suspected case is notified from a health facility to the time the completed case details are entered into the systems to generate outbreak alerts or enable analysis. 
@@ -62,10 +72,8 @@ In a decentralized workflow, the configuration of **user groups** allows users a
 One major benefit of a decentralized reporting system is timeliness of data amd availability of data in the electronic system for outbreak investigation and response. For example, facilities can report suspected cases into the DHIS2 VPD program in near real-time, enhancing the early warning function of the system. When lab results are available, the data can be added to the case record and indicators and outbreak alert thresholds configured into the system will be updated automatically. 
 
 **Dashboards & Analytical Outputs**
-Anumber of outputs have been created and are described in more detail in the _**Dashboard Design Summary**_ section of this document.
+A number of outputs have been created and are described in more detail in the _**Dashboard Design Summary**_ section of this document.
 
-
-### Intended users
 
 
 ## Program Structure
@@ -233,4 +241,10 @@ For AFRO Member States, this package is optimized and approved by the Regional O
 Extension and expansion of the DHIS2 VPD case surveillance system in future phases is anticipated to:
 * Strengthen response and management of public health actions through the support of local workflows for case notification
 * Enable the identification and management of outbreaks based on the VPD case reporting system contained in the package.
+
+# References
+WHO Regional Office for Africa (2019). Technical guidelines for integrated disease surveillance & response in the WHO AFRO Region. Retrieved from: https://apps.who.int/iris/bitstream/handle/10665/325015/WHO-AF-WHE-CPI-05.2019-eng.pdf
+
+US CDC (2021). Global Disease Detection Operations Center: Overview. Retrieved from: https://www.cdc.gov/globalhealth/healthprotection/gddopscenter/how.html
+
 
