@@ -55,12 +55,14 @@ The workflow outlined below illustrates the processes resulting in all relevant 
 
 This workflow is most closely aligned to the existing cenralized reporting system using Epi-Info. While this workflow is the most straight-forward to replace in a given country, the disadvantage of centralized reporting is that there can be long delays between the time a suspected case is notified from a health facility to the time the completed case details are entered into the systems to generate outbreak alerts or enable analysis. 
 
-**_All diseases excluding Neonatal Tetanus_**
+**_Workflow: all VPDs excluding Neonatal Tetanus_**
+
 The possibility for laboratory specimen collection and lab diagnosis data to be attached to the case record is incorporated into the program design for all diseases *excluding Neonatal Tetanus (NT)*.
 
 ![workflow for all diseases](resources/images/workflow1.png)
 
-**_Neonatal Tetanus_**
+**_Workflow: Neonatal Tetanus_**
+
 The workflow for Neonatal Tetanus excludes laboratory testing. 
 
 ![workflow for neonatal tetanus](resources/images/workflow2.png)
@@ -75,7 +77,9 @@ One major benefit of a decentralized reporting system is timeliness of data amd 
 ### Analysis & Use 
 Surveillance data captured in the DHIS2 case-based system can be made available to users from national to district and facility levels according to the configuration of user access settings. Regardless of which level of the system data are *entered* electronically into the system, data can be made available for analysis automatically down to the level of initial reporting (i.e. facility and upwards). Triangulation of case-based data for VPDs captured in DHIS2 alongside immunization coverage rates and other data sources can be used by national immunization programme staff to identify zero-dose and under-immunized pockets of the population. 
 
-**Program indicators** have been configured as part of the case-based package according to disease-specific requirements, including operational indicators that are useful for planning and mobitoring response activities. In addition to pre-configured **dashboards** included in the package specific to each disease, the following dashboards incorporate data from across diseases:
+**Program indicators** have been configured as part of the case-based package according to disease-specific requirements, including operational indicators that are useful for planning and mobitoring response activities. Program indicators are used to aggregate case-based data for analysis and presentation on dashbaord visualizations. 
+
+Pre-configured **dashboards** are included in the package specific to each disease. In addition, the following dashboards incorporate data from across diseases:
 1.  CBS Alert/Outbreak dashboard: summarizes outbreak alerts (based on pre-configured thresholds for case-based data) across all VPDs included in the package at district level for rapid analysis
 2.  CBS-IDSR Comparative Dashboard: when the CBS package is installed with the aggregate surveillance (IDSR) package in DHIS2, this dashbaord enables analysis and data quality/completeness reviews across case-based and aggregate reporting flows for VPDs 
 
