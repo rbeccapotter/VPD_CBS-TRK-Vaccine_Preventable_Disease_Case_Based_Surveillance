@@ -111,7 +111,7 @@ The following concepts and data variables have been modeled as tracked entity at
 ** Village/neighborhood: configured to capture free text
 * **Date of birth and age**: The date of birth can be captured and represented with several TEAs. If the DOB is known, the user can enter it directly as a TEA. If DOB is unknown, the user will capture as 'yes only' for the TEA 'date of birth unknown' and program rules will show options for the user to enter 'age in years' or 'age in months' as TEAs. When these fields are used, the DOB TEA is automatically populated based on the estimated number of years/months entered. An example is shown below. 
 
-![CBS DOB](resources/VPD_CBS_DOB.png)
+![CBS DOB](resources/images/VPD_CBS_DOB.png)
 
 
 ### Stage 1: Diagnostic & Clinical Information
