@@ -86,7 +86,7 @@ Pre-configured **dashboards** are included in the package specific to each disea
 ## Program Structure
 All of the programs in the VPD-CBS package have a similar design, however different sections and variables are attached to each disease **_based on the initial diagnosis that is selected during registration_**. The program structure is as follows: 
 
-![CBS program structure](resources/images/VPD_CBS_program_structure.png)
+![CBS program structure](resources/VPD_CBS_program_structure.png)
 
 Note suspected Neonatal Tetanus cases do not require lab specimen collection or laboratory confirmation. Therefore, program rules are used to show only the following program stages for NT cases: 
 
@@ -111,7 +111,7 @@ The following concepts and data variables have been modeled as tracked entity at
 ** Village/neighborhood: configured to capture free text
 * **Date of birth and age**: The date of birth can be captured and represented with several TEAs. If the DOB is known, the user can enter it directly as a TEA. If DOB is unknown, the user will capture as 'yes only' for the TEA 'date of birth unknown' and program rules will show options for the user to enter 'age in years' or 'age in months' as TEAs. When these fields are used, the DOB TEA is automatically populated based on the estimated number of years/months entered. An example is shown below. 
 
-![CBS DOB](resources/images/VPD_CBS_DOB.png)
+![CBS DOB](resources/VPD_CBS_DOB.png)
 
 
 ### Stage 1: Diagnostic & Clinical Information
