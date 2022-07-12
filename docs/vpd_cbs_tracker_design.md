@@ -84,14 +84,9 @@ Pre-configured **dashboards** are included in the package specific to each disea
 2.  CBS-IDSR Comparative Dashboard: when the CBS package is installed with the aggregate surveillance (IDSR) package in DHIS2, this dashbaord enables analysis and data quality/completeness reviews across case-based and aggregate reporting flows for VPDs 
 
 ## Program Structure
-All of the programs in the VPD-CBS package have a similar design, however different sections and variables are attached to each disease **_based on the initial diagnosis that is selected during registration_**. The program is made up of the following stages in its design:
+All of the programs in the VPD-CBS package have a similar design, however different sections and variables are attached to each disease **_based on the initial diagnosis that is selected during registration_**. The program structure is as follows: 
 
-1. Enrollment Details
-2. Diagnostic & Clinical Information
-3. Laboratory request
-4. Specimen Tracking
-5. Laboratory Result
-6. Final Classification
+![CBS program structure](resources/images/VPD_CBS_program_structure.png)
 
 Note suspected Neonatal Tetanus cases do not require lab specimen collection or laboratory confirmation. Therefore, program rules are used to show only the following program stages for NT cases: 
 
@@ -99,14 +94,45 @@ Note suspected Neonatal Tetanus cases do not require lab specimen collection or 
 2. Diagnostic & Clinical Information
 3. Final Classification
 
-| Stage | Description |
-|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Enrollment details Attributes | The Tracked Entity is the case, which is represented by a Tracked Entity Type of ‘person.’ Cases are uniquely identified by the Disease specific Epid Number that is assigned to them. This number is a combination of their Epid Number and the disease identified during their initial diagnosis. Enrollment date = Date of notification Incident date = Date of symptoms onset Attributes include basic personal information and unique case identifiers. The attributes within this program include: System Generated Case ID Epid number First Name Last Name Date of birth Age (Years) Age (Months) Sex Home address Village/Neighbourhood Town/City District of residence Province of residence Telephone (local) Workplace/school physical address Facility contact number First name (parent or carer) Last name (parent or carer) Clinical diagnosis Disease specific Epid Number |
-| Stage 1: Diagnostic & Clinical Information | This stage records a suspected case’s clinical details and admission information, signs and symptoms, vaccination history, notification information and outcome. |
-| Stage 2: Lab Request [repeatable] | The lab request records details related to any specimens that are being sent to the lab for processing. The information provided here can help lab personnel prioritize lab tests when resources are limited. The person entering this data could be the same person who registered the suspected case and recorded the patient’s clinical exam and exposures; or may be other personnel charged with making lab requests. |
-| Stage 3: Specimen Tracking [repeatable] | Specimen tracking records when lab specimen’s sent for processing were received at various lab levels. |
-| Stage 4: Laboratory Result [repeatable] | The lab results stage records the specimen type and results from laboratory testing. It can be done directly at the lab or as secondary data entry. This stage is repeatable as samples for a given case may be tested multiple times (i.e. in the case of an inconclusive laboratory results, a new lab test can be conducted and results recorded) and/or multiple samples may also need to be processed. |
-| Stage 5: Final Classification | The final classification records the final confirmed classification of the case as it relates to the initial diagnosis. |
+### Enrollment (case registration)
+A suspected case presenting at a health facility or other surveillance point is represented in DHIS2 as a tracked entity instance [TEI]), using the tracked entity type 'person'. The enrollment is configured to '*Only enroll once per tracked entity lifetime*'. The TEI is expected to be enrolled in the tracker program only once; when the final case classification is completed for a given case and the enrollment is completed in the tracker program, it is not expected to create a new enrollment for that TEI in the future. If the same person presents as a suspected case in the future, the person would be registered and enrolled into the program as a new tracked entity instance representing a new suspected case, given a new Epid number and assigned an initial clinical diagnosis. 
+
+The *enrollment date* is represented as the 'date of case notification'; while the *incident date* is represented as the 'date of symptoms onset'. Capturing the date of symptons onset in addition to date of notication during the enrollment allows for more robust time-based anaysis of case data.
+
+**Tracked entity attributes**
+The following concepts and data variables have been modeled as tracked entity attributes (TEA) in the tracker program and are captured during the enrollment:
+* **'Clinical diagnosis':** The initial clinical diagnosis is modeled as a TEA because it triggers a series of program rules to show and hide data variables, program stages, and program stage sections throughout the workflow based on the disease. This allows a single tracker program to be used to report across many diseases.
+* **'Epid Number'**: Cases are uniquely identified by the disease-specific Epid Number that is assigned to them. This number is a combination of their Epid Number and the disease identified during their initial diagnosis. Program rules have been configured to ensure that epid numbers follow the correct format. The Epid number is a useful identifier for searching and retrieving the case record; however, pragmatically the epid number is often assigned at central level and may not be entered during the initial enrollment in a decentralized workflow that allows facilities to register suspected cases into the program.
+* **System case ID**: an additional identifier configured to be automatically generated and unique *within the DHIS2 system*. 
+* **Location of case's residence** The geolocation of the case's residence is captured by multiple TEAs to represent both structured and unstructured data:
+** District of residence: the district is selected from the org unit hierarchy to allow structured analysis based on the residence/home of a case
+** Province of residence: as above, the province is selected from the org unit hierarchy 
+** Home address: configured to capture free text
+** Village/neighborhood: configured to capture free text
+* **Date of birth and age**: The date of birth can be captured and represented with several TEAs. If the DOB is known, the user can enter it directly as a TEA. If DOB is unknown, the user will capture as 'yes only' for the TEA 'date of birth unknown' and program rules will show options for the user to enter 'age in years' or 'age in months' as TEAs. When these fields are used, the DOB TEA is automatically populated based on the estimated number of years/months entered. An example is shown below. 
+
+![CBS DOB](resources/images/VPD_CBS_DOB.png)
+
+
+### Stage 1: Diagnostic & Clinical Information
+ This stage records a suspected case’s clinical details and admission information, signs and symptoms, vaccination history, notification information and outcome. 
+
+### Stage 2: Lab request
+The lab request records details related to any specimens that are being sent to the lab for processing. The information provided here can help lab personnel prioritize lab tests when resources are limited. The person entering this data could be the same person who registered the suspected case and recorded the patient’s clinical exam and exposures; or may be other personnel charged with making lab requests. 
+
+### Stage 3: Specimen Tracking
+Specimen tracking records when lab specimen’s sent for processing were received at various lab levels. 
+
+### Stage 4: Laboratory Result
+The lab results stage records the specimen type and results from laboratory testing. It can be done directly at the lab or as secondary data entry. This stage is repeatable as samples for a given case may be tested multiple times (i.e. in the case of an inconclusive laboratory results, a new lab test can be conducted and results recorded) and/or multiple samples may also need to be processed. 
+
+### Stage 5: Final Classification
+The final classification records the final confirmed classification of the case as it relates to the initial diagnosis.
+
+### Program Rules
+Program rules are used extensively throughout the tracker program to show/hide data elements, program stages and program stage sections based on the initial diagnosis selected during enrollment. 
+
+A complete list of program rules is inluded in the metadata reference file for the package, accessed at [dhis2.org/who-package-downloads](https://dhis2.org/who-package-downloads)
 
 ### CRS { #cbs_crs }
 
@@ -207,17 +233,8 @@ Note suspected Neonatal Tetanus cases do not require lab specimen collection or 
 | Stage 4: Laboratory Result [repeatable] | The lab results stage records the specimen type and results from laboratory testing. It can be done directly at the lab or as secondary data entry. This stage is repeatable as samples for a given case may be tested multiple times (i.e. in the case of an inconclusive laboratory results, a new lab test can be conducted and results recorded) and/or multiple samples may also need to be processed. |
 | Stage 5: Final Classification | The final classification records the final confirmed classification of the case as it relates to the initial diagnosis. |
 
-## User Groups
 
-The following user groups are included in the metadata package:
-
-1. CBS admin -- intended for system admins to have metadata edit rights
-2. CBS data capture -- intended for data entry staff to have access to capture data
-3. CBS access -- intended for users such as analytics users who should be able to view the data, but not edit metadata or data.
-
-Currently, only users assigned to the CBS data capture group will have access to capture data in the program. Please refer to the installation guidance for more instructions.
-
-## Dashboards
+## Dashboards & Analytics
 
 Integrated dashboards for each disease have been created. Please select a link below for a description of the corresponding dashboard:
 
@@ -233,11 +250,7 @@ Integrated dashboards for each disease have been created. Please select a link b
 10. Alerts/Outbreak
 11. Comparative Analysis
 
-## Program Rules
-
-A complete list of program rules is inluded in the metadata reference file for the package, accessed at [dhis2.org/who-package-downloads](https://dhis2.org/who-package-downloads)
-
-## Program Indicators
+### Program Indicators
 
 A complete list of program indicators is inluded in the metadata reference file for the package, accessed at [dhis2.org/who-package-downloads](https://dhis2.org/who-package-downloads)
 
