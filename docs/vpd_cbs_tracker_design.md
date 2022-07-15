@@ -33,17 +33,18 @@ Through a collaborative process of working with implementing countries and surve
 ### Diseases Covered
 This package integrates case-based reporting workflows for 9 different vaccine-preventable diseases within the same system. This is typically a more sustainable approach compared to having different systems or databases for each individual disease. Data variables per diseases have been configured as Data Elements and Tracked Antity Attributes in the DHIS2 tracker program according to a core list of [surveillance data elements](https://drive.google.com/file/d/1IL2fRyBcVI5IP-cTrwQW9dEqry7RI5dz/view?usp=sharing) provided by WHO Health Emergencies & the WHO Regional Office for Africa.
 
-Standardized data variables are incorporated into the VPD case-based tracker program for the following diseases. You can select a disease in order to be taken to its design details within the document. 
-
-1. [Congenital Rubella Syndrome (CRS)](#cbs_crs)
-2. [Invasive Bacterial Vaccine Preventable Disease (IBVPD)](#cbs_ibvpd)
-3. [Measles/Rubella](#cbs_measles_rubella)
-4. [Meningitis](#cbs_meningitis)
-5. [Neonatal Tetanus](#cbs_neonatal_tetanus)
-6. [Polio (Acute Flaccid Paralysis)](#cbs_afppolio)
-7. [Rotavirus](#cbs_rotavirus)
-8. [Rotavirus Impact](#cbs_rotavirus_impact)
-9. [Yellow Fever](#cbs_yellow_fever)
+Standardized data variables are incorporated into the VPD case-based tracker program for the following diseases:
+1. Congenital Rubella Syndrome (CRS)
+2. Invasive Bacterial Vaccine Preventable Disease (IBVPD)
+3. Measles/Rubella (MR)
+4. Meningitis
+5. Neonatal Tetanus (NT)
+6. Acute Flaccid Paralysis (AFP)
+7. Rotavirus
+8. Rotavirus Impact
+9. Yellow Fever
+10. Alerts/Outbreak
+11. Comparative Analysis
 
 The package design is *not* inherently limited to vaccine-preventable disease reporting;  it can be adapted and customized for country implementation to incorporate additional reporting of notifiable, reportable or other epidemic-prone diseases according to country policies. 
 
@@ -81,7 +82,7 @@ Surveillance data captured in the DHIS2 case-based system can be made available 
 
 Pre-configured **dashboards** are included in the package specific to each disease. In addition, the following dashboards incorporate data from across diseases:
 1.  CBS Alert/Outbreak dashboard: summarizes outbreak alerts (based on pre-configured thresholds for case-based data) across all VPDs included in the package at district level for rapid analysis
-2.  CBS-IDSR Comparative Dashboard: when the CBS package is installed with the aggregate surveillance (IDSR) package in DHIS2, this dashbaord enables analysis and data quality/completeness reviews across case-based and aggregate reporting flows for VPDs 
+2.  CBS-IDSR Comparative Dashboard: when the CBS package is installed with the aggregate surveillance (IDSR) package in DHIS2, this dashboard enables analysis and data quality/completeness reviews across case-based and aggregate reporting flows for VPDs 
 
 ## Program Structure
 All of the programs in the VPD-CBS package have a similar design, however different sections and variables are attached to each disease **_based on the initial diagnosis that is selected during registration_**. The program structure is as follows: 
@@ -185,19 +186,31 @@ A complete list of program rules is inluded in the metadata reference file for t
 
 ## Dashboards & Analytics
 
-Integrated dashboards for each disease have been created. Please select a link below for a description of the corresponding dashboard:
+### Dashboards
+Pre-configured dashboards are included in the package to automate key analyses in an integrated way (across diseases) as well as for disease-specific surveillance needs and indicators. Disease-specific dashboards include epi cruves, suspected outbreak alerts, and automated analysis of indicators specific to the disease such as antigen specific vaccination status, measles discard rates, and specimen adequacy.  Some examples of integrated and disease-specific dashboard visualizations are provided below.
 
-1. [Congenital Rubella Syndrome (CRS)](#cbs_crs)
-2. [Invasive Bacterial Vaccine Preventable Disease (IBVPD)](#cbs_ibvpd)
-3. [Measles/Rubella](#cbs_measlesrubella)
-4. [Meningitis](#cbs_meningitis)
-5. [Neonatal Tetanus](#cbs_neonatal_tetanus)
-6. [Polio (Acute Flaccid Paralysis)](#cbs_afppolio)
-7. [Rotavirus](#cbs_rotavirus)
-8. [Rotavirus Impact](#cbs_rotavirus_impact)
-9. [Yellow Fever](#cbs_yellow_fever)
-10. Alerts/Outbreak
-11. Comparative Analysis
+#### CBS Alert/Outbreak dashboard
+The dashboard visualizes outbreak alerts by district across all VPDs included for early warning. Districts in alert are configured according to thresholds set based on disease-specific criteria. 
+
+*Visualizations from CBS Alert/Outbreak dashboard*
+![CBS alert dashboard](resources/VPD_CBS_outbreak_dashboard_1.PNG)
+
+#### CBS/IDSR Comparative dashboard
+When the CBS package is installed with the aggregate surveillance (IDSR) package in DHIS2, this dashboard enables analysis and data quality/completeness reviews across case-based and aggregate reporting flows for VPDs.
+![CBS comparative dashboard](resources/VPD_CBS_comparative_dashboard_1.PNG)
+
+#### CBS Measles/Rubella dashboard
+*Measles outbreak visualizations at district level*
+![MR CBS dashboard1](resources/VPD_CBS_MR_dashboard_1.PNG)
+
+*Distribution of confirmed/non-confirmed measles cases*
+![MR CBS dashboard2](resources/VPD_CBS_MR_dashboard_2.PNG)
+
+*Measles incidence by week and district*
+![MR CBS dashboard3](resources/VPD_CBS_MR_dashboard_3.PNG)
+
+*Measles cases by vaccination status & specimens collected per 100,000 population*
+![MR CBS dashboard3](resources/VPD_CBS_MR_dashboard_4.PNG)
 
 ### Program Indicators
 
