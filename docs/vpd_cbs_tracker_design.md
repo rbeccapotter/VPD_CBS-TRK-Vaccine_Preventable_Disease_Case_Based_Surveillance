@@ -5,7 +5,7 @@
 The integrated Vaccine Preventable Disease (VPD) Case Based Surveillance (CBS) system is designed to:
 1. Facilitate integrated reporting of nine (9) vaccine-preventable diseases in an electronic system
 2. Link laboratory results with clinical diagnoses and case investigation forms for a suspected case
-3. Generate automated alerts of possible diseease outbreaks based on thresholds
+3. Generate automated alerts of possible disease outbreaks based on thresholds
 4. Improve analysis of case-based data alongside aggregated facility-based reporting to inform action 
 
 The integrated disease surveillance strategy has been adopted widely in recent decades to promote rational and efficient use of resources by streamlining common surveillance activities and functions ([WHO](https://apps.who.int/iris/bitstream/handle/10665/325015/WHO-AF-WHE-CPI-05.2019-eng.pdf)). An integrated information system design approach to case-based disease surveillance in DHIS2 capitalizes on the similarities of surveillance functions across different diseases such as case notification, sample collection, reporting, analysis and interpretation, feedback, and action -- often carried out in countries using the same structures, processes and personnel. The case-based package is designed to be implemented alongside the aggregate disease surveillance package for weekly/routine reporting of suspected cases, conditionsand/or syndromes from health facilities on related vaccine-preventable and epidemic-prone diseases.
