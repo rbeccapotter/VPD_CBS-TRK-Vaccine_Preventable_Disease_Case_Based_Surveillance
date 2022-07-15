@@ -231,13 +231,13 @@ Program indicators are used to automate the aggregation of individual-level case
 ### Indicators
 Indicators have been configured that combine one or more program indicators or use other data sources such as population for the denominator. Examples include:
 
-% cases with cerebrospinal fluid (CSF) collected = 
-Numerator: program indicator aggregating the number of suspected meningitis cases whose CSF sample was collected
-Denominator: program indicator aggregating the total number of suspeced meningitis cases reported through the CBS tracker
+*% cases with cerebrospinal fluid (CSF) collected* 
+- Numerator: program indicator aggregating the number of suspected meningitis cases whose CSF sample was collected
+- Denominator: program indicator aggregating the total number of suspeced meningitis cases reported through the CBS tracker
 
-Measles incidence rate = 
-Numerator: program indicator aggregating confirmed measles cases reported through case-based tracker
-Denominator: population from non-CBS data sets
+*Measles incidence rate*
+- Numerator: program indicator aggregating confirmed measles cases reported through case-based tracker
+- Denominator: population from non-CBS data sets
 
 # Implementation & Local Adaptation 
 
