@@ -85,6 +85,14 @@ Pre-configured **dashboards** are included in the package specific to each disea
 
 ## Program Structure
 All of the programs in the VPD-CBS package have a similar design, however different sections and variables are attached to each disease **_based on the initial diagnosis that is selected during registration_**. The program structure is as follows: 
+The program is made up of the following stages in its design:
+
+1. Enrollment Details
+2. Diagnostic & Clinical Information
+3. Laboratory request
+4. Specimen Tracking
+5. Laboratory Result
+6. Final Classification
 
 ![CBS program structure](resources/VPD_CBS_program_structure.png)
 
@@ -115,19 +123,60 @@ The following concepts and data variables have been modeled as tracked entity at
 
 
 ### Stage 1: Diagnostic & Clinical Information
- This stage records a suspected case’s clinical details and admission information, signs and symptoms, vaccination history, notification information and outcome. 
+This stage records a suspected case’s clinical details and admission information, signs and symptoms, vaccination history, notification information and outcome. The program stage contains the following sections; however, note that sections are shown/hidden in the data entry form by program rules according to the data variables relevant to the clinical diagnosis (suspected disease) captured during enrollment. 
+* Admission and clinical information
+* Vaccination status
+* Diarrhoea
+* Vomiting
+* Maternal vaccination status
+* Signs and symptoms
+* Child birth
+* Parents interview
+* History of patient movements prior to onset
+* Notification information 
+* Follow-up examination
+* Outcome
 
 ### Stage 2: Lab request
-The lab request records details related to any specimens that are being sent to the lab for processing. The information provided here can help lab personnel prioritize lab tests when resources are limited. The person entering this data could be the same person who registered the suspected case and recorded the patient’s clinical exam and exposures; or may be other personnel charged with making lab requests. 
+The lab request records details related to any specimens that are being sent to the lab for processing. The information provided here can help lab personnel prioritize lab tests when resources are limited. The person entering this data could be the same person who registered the suspected case and recorded the patient’s clinical exam and exposures; or may be other personnel charged with making lab requests. The specimen ID is captured and be used to link with tracking or laboratory systems.
 
 ### Stage 3: Specimen Tracking
-Specimen tracking records when lab specimen’s sent for processing were received at various lab levels. 
+Specimen tracking records when lab specimens sent for processing were received at various lab levels, such as national and international reference labs. It also captures the specimen condition at each level. 
 
 ### Stage 4: Laboratory Result
-The lab results stage records the specimen type and results from laboratory testing. It can be done directly at the lab or as secondary data entry. This stage is repeatable as samples for a given case may be tested multiple times (i.e. in the case of an inconclusive laboratory results, a new lab test can be conducted and results recorded) and/or multiple samples may also need to be processed. 
+The lab results stage records the specimen type and results from laboratory testing. It can be done directly at the lab or as secondary data entry. This stage is repeatable as samples for a given case may be tested multiple times (i.e. in the case of an inconclusive laboratory results, a new lab test can be conducted and results recorded) and/or multiple samples may also need to be processed. The program stage contains the following sections; however, note that sections are shown/hidden in the data entry form by program rules according to the laboratory tests relevant to the clinical diagnosis (suspected disease) captured during enrollment. 
+* Information (including specimen condition, RDT results, PCR results)
+* Susceptibility 
+* Laboratory log book
+* CSF & Isolate
+* Lab-Measles/Rubella (variable specific to suspected M/R cases)
+* Other sterile bodily fluid
+* Serology result
+* Regional lab-Seroneutralisation
+* Regional lab-Molecular biology
+* Regional lab-Virus isolation
+* Regional reference laboratory
+* Summary of cell culture results
+* Stool specimen results
+* Isolate sequencing information
+* Sequencing
+* Enterovirus results
+* ITD results
+* rRT-PCR-ITD results
+* rRT-PCR-VDPV results
+* Sabin sequencing results
+* Site laboratory information
+* Reference lab
+* VDPV sequencing results
+* Wild polio sequence result
+* Referred to CDC secondary
+* Antimocrobial resistance results
+* Other tests
+* Final lab classification
+* Result summary
 
 ### Stage 5: Final Classification
-The final classification records the final confirmed classification of the case as it relates to the initial diagnosis.
+The final classification records the final confirmed classification of the case as it relates to the initial diagnosis. The stage also captures optional data on discharge clinical diagnosis and sequelae present at discharge.
 
 ### Program Rules
 Program rules are used extensively throughout the tracker program to show/hide data elements, program stages and program stage sections based on the initial diagnosis selected during enrollment. 
