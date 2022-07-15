@@ -192,24 +192,30 @@ Pre-configured dashboards are included in the package to automate key analyses i
 #### CBS Alert/Outbreak dashboard
 The dashboard visualizes outbreak alerts by district across all VPDs included for early warning. Districts in alert are configured according to thresholds set based on disease-specific criteria. 
 
-*Visualizations from CBS Alert/Outbreak dashboard*
+*CBS Districts in Alert/Outbreak*
+
 ![CBS alert dashboard](resources/VPD_CBS_outbreak_dashboard_1.PNG)
 
 #### CBS/IDSR Comparative dashboard
 When the CBS package is installed with the aggregate surveillance (IDSR) package in DHIS2, this dashboard enables analysis and data quality/completeness reviews across case-based and aggregate reporting flows for VPDs.
+
 ![CBS comparative dashboard](resources/VPD_CBS_comparative_dashboard_1.PNG)
 
 #### CBS Measles/Rubella dashboard
 *Measles outbreak visualizations at district level*
+
 ![MR CBS dashboard1](resources/VPD_CBS_MR_dashboard_1.PNG)
 
 *Distribution of confirmed/non-confirmed measles cases*
+
 ![MR CBS dashboard2](resources/VPD_CBS_MR_dashboard_2.PNG)
 
 *Measles incidence by week and district*
+
 ![MR CBS dashboard3](resources/VPD_CBS_MR_dashboard_3.PNG)
 
 *Measles cases by vaccination status & specimens collected per 100,000 population*
+
 ![MR CBS dashboard3](resources/VPD_CBS_MR_dashboard_4.PNG)
 
 ### Program Indicators
