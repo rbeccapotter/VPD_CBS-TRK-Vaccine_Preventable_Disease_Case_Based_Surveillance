@@ -179,8 +179,14 @@ The lab results stage records the specimen type and results from laboratory test
 ### Stage 5: Final Classification
 The final classification records the final confirmed classification of the case as it relates to the initial diagnosis. The stage also captures optional data on discharge clinical diagnosis and sequelae present at discharge.
 
+### Notifications
+Notifications have been configured to trigger out-bound messages from the system:
+* Lab Results Ready: this program notification can be used to alert user groups such as district health staff, surveillance officers or facility staff by message, email or SMS (with gateway configured) when lab results are available and updated in the system. The notification is triggered when the Lab Results program stage is marked as 'completed'. 
+
 ### Program Rules
-Program rules are used extensively throughout the tracker program to show/hide data elements, program stages and program stage sections based on the initial diagnosis selected during enrollment. 
+Program rules are used extensively throughout the tracker program to show/hide data elements, program stages and program stage sections based on the tracked entity attribute 'clinical diagnosis' selected during enrollment. 
+
+Program rules are also used for validation, such as warnings and error messages to ensure the standard Epid number format is followed. 
 
 A complete list of program rules is inluded in the metadata reference file for the package, accessed at [dhis2.org/who-package-downloads](https://dhis2.org/who-package-downloads)
 
@@ -220,15 +226,22 @@ When the CBS package is installed with the aggregate surveillance (IDSR) package
 
 ### Program Indicators
 
-A complete list of program indicators is inluded in the metadata reference file for the package, accessed at [dhis2.org/who-package-downloads](https://dhis2.org/who-package-downloads)
+Program indicators are used to automate the aggregation of individual-level case data for analysis or perform calculations such as time-between indicators. Examples include the number of suspected cases investigated within 48 hours. A complete list of program indicators is included in the metadata reference file for the package, accessed at [dhis2.org/who-package-downloads](https://dhis2.org/who-package-downloads)
+
+### Indicators
+Indicators have been configured that combine one or more program indicators or use other data sources such as population for the denominator. Examples include:
+
+% cases with cerebrospinal fluid (CSF) collected = 
+Numerator: program indicator aggregating the number of suspected meningitis cases whose CSF sample was collected
+Denominator: program indicator aggregating the total number of suspeced meningitis cases reported through the CBS tracker
+
+Measles incidence rate = 
+Numerator: program indicator aggregating confirmed measles cases reported through case-based tracker
+Denominator: population from non-CBS data sets
 
 # Implementation & Local Adaptation 
 
 For AFRO Member States, this package is optimized and approved by the Regional Office to replace the existing AFRO VPD surveillance EPI Info system with DHIS2 VPD surveillance package. The package meets the functional requirements, workflows and mandatory data variables for reporting that have previously been done in EPI Info. Countries using this package can push their case-based data to the AFRO regional respository directly from the national DHIS2 instance where the VPD package is installed & used. Thus, as part of country implementation in AFRO Member States, discussions around how and when to phase out the use of the EPI Info reporting system are recommendec to reduce duplicate data entry and strengthen feedback loops & data quality in the DHIS2-based system.
-
-Extension and expansion of the DHIS2 VPD case surveillance system in future phases is anticipated to:
-* Strengthen response and management of public health actions through the support of local workflows for case notification
-* Enable the identification and management of outbreaks based on the VPD case reporting system contained in the package.
 
 # References
 WHO Regional Office for Africa (2019). Technical guidelines for integrated disease surveillance & response in the WHO AFRO Region. Retrieved from: https://apps.who.int/iris/bitstream/handle/10665/325015/WHO-AF-WHE-CPI-05.2019-eng.pdf
