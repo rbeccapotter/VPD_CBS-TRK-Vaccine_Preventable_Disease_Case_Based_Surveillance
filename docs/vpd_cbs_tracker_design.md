@@ -2,7 +2,13 @@
 
 ## Introduction
 
-The integrated Vaccine Preventable Disease (VPD) Case Based Surveillance (CBS) system is designed to facilitate reporting of nine (9) vaccine-preventable diseases in an electronic system, link laboratory results with the case file, generate automated alerts of possible diseease outbreaks based on thresholds, and facilitate analysis of case-based data alongside aggregated facility-based reporting to inform action. The integrated disease surveillance strategy has been adopted widely in recent decades to promote rational and efficient use of resources by streanlining common surveillance activities and functions ([WHO](https://apps.who.int/iris/bitstream/handle/10665/325015/WHO-AF-WHE-CPI-05.2019-eng.pdf)). An integrated information system design approach to case-based disease surveillance in DHIS2 capitalizes on the similarities of surveillance functions across different diseases such as case notification, sample collection, reporting, analysis and interpretation, feedback, and action -- often carried out in countries using the same structures, processes and personnel. The case-based package is designed to be implemented alongside the aggregate disease surveillance (IDSR) package for weekly/routine reporting of suspected cases and/or syndromes from health facilities on related vaccine-preventable and epidemic-prone diseases.
+The integrated Vaccine Preventable Disease (VPD) Case Based Surveillance (CBS) system is designed to:
+1. Facilitate integrated reporting of nine (9) vaccine-preventable diseases in an electronic system
+2. Link laboratory results with clinical diagnoses and case investigation forms for a suspected case
+3. Generate automated alerts of possible diseease outbreaks based on thresholds
+4. Improve analysis of case-based data alongside aggregated facility-based reporting to inform action 
+
+The integrated disease surveillance strategy has been adopted widely in recent decades to promote rational and efficient use of resources by streamlining common surveillance activities and functions ([WHO](https://apps.who.int/iris/bitstream/handle/10665/325015/WHO-AF-WHE-CPI-05.2019-eng.pdf)). An integrated information system design approach to case-based disease surveillance in DHIS2 capitalizes on the similarities of surveillance functions across different diseases such as case notification, sample collection, reporting, analysis and interpretation, feedback, and action -- often carried out in countries using the same structures, processes and personnel. The case-based package is designed to be implemented alongside the aggregate disease surveillance package for weekly/routine reporting of suspected cases, conditionsand/or syndromes from health facilities on related vaccine-preventable and epidemic-prone diseases.
 
 The integrated VPD case-based system in DHIS2 has several advantages over traditionally centralized (national level) reporting into disease-specific forms:
 1. Integrated system across diseases: All reported diseases being included in one place, rather than managing and merging different databases for entry, analysis and administration. This approach is more sustainable in most settings, as a single database can be managed across diseases. 
@@ -10,7 +16,7 @@ The integrated VPD case-based system in DHIS2 has several advantages over tradit
 3. Improved access at district & facility levels: Allows staff to remotely access details related to a case they are working on (ie. lab staff, clinical staff).
 4. Reduced burden on upwards reporting: Enables case reports captured in the national DHIS2 system to be syncronized to a regional platform through electronic data exchange, rather than through manual processes. 
 
-The VPD CBS package was developed in close collaboration with WHO Health Emergencies (WHE) programme and WHO Regional Office for Africa and is intended to strengthen recommendations for improving electronic disease surveillance systems as outlined in the [Technical Guidelines for Integrated Disease Surveillance and Response in the AFRO Region (2019)](https://apps.who.int/iris/bitstream/handle/10665/325015/WHO-AF-WHE-CPI-05.2019-eng.pdf). For AFRO Member States, the package also serves as a replacement for centralized, offline reporting into the Epi Info database that has traditionally been used for submitting case reports to the Regional Office. Additional data exchange apps have been developed to facilitate pushing case reports from a country's DHIS2 instance to the AFRO regional surveillance platform. As such, data elements have been aligned to the standard VPD case reports used across the region. The package can be adapted to local needs and national guidelines; however any key elements that are required by the regional platform will be mandatory and should therefore not be modified.
+The VPD CBS package was developed in close collaboration with WHO Health Emergencies (WHE) programme and WHO Regional Office for Africa and is intended to strengthen recommendations for improving electronic disease surveillance systems as outlined in the [Technical Guidelines for Integrated Disease Surveillance and Response in the AFRO Region (2019)](https://apps.who.int/iris/bitstream/handle/10665/325015/WHO-AF-WHE-CPI-05.2019-eng.pdf). For AFRO Member States, the package also serves as a replacement for centralized, offline reporting into the Epi-Info database that has traditionally been used for submitting case reports to the Regional Office. Additional data exchange apps have been developed to facilitate pushing case reports from a country's DHIS2 instance to the AFRO regional surveillance platform. As such, data elements have been aligned to the standard VPD case reports used across the region. The package can be adapted to local needs and national guidelines; however any key elements that are required by the regional platform will be mandatory and should therefore not be modified.
 
 For non-AFRO Member States, the package can be further modified to include/exclude diseases and data variables from the tracker program according to national policies on reportable and notifiable diseases. The overall tracker program design for linking case reporting with laboratory results and classification is flexible for national and regional modification.
 
@@ -21,13 +27,14 @@ This package was developed according to standards-based content provided by and 
 
 ### Use case 
 Surveillance is the ongoing systematic identification, collection, collation, analysis and interpretation of disease occurrence and public health event data, for the purposes of taking timely and robust action, such as disseminating the resulting information to the relevant people, for effective and appropriate action ([WHO](https://apps.who.int/iris/bitstream/handle/10665/325015/WHO-AF-WHE-CPI-05.2019-eng.pdf)). Surveillance is also essential for planning, implementation,
-monitoring and evaluation of public health interventions. The DHIS2 VPD case-based surveillance package supports one approach to indicator-based surveillance, which is typically characterized as structured information, reported to public health officials mostly from formal sources such as health care providers, following a standardized format or set of indicator definitions ([WHO](https://apps.who.int/iris/bitstream/handle/10665/325015/WHO-AF-WHE-CPI-05.2019-eng.pdf), [US CDC](https://www.cdc.gov/globalhealth/healthprotection/gddopscenter/how.html#:~:text=Indicator%2Dbased%20surveillance%20involves%20reports,the%20information%20obtained%20is%20standardized)). Systematic reporting of suspected cases or notifiable conditions through indicator-based surveillance forms one key component of an early warning system. 
+monitoring and evaluation of public health interventions. The DHIS2 VPD case-based surveillance package supports one approach to indicator-based surveillance, which is typically characterized as structured information, reported to public health officials mostly from formal sources such as health care providers, following a standardized format or set of indicator definitions ([WHO](https://apps.who.int/iris/bitstream/handle/10665/325015/WHO-AF-WHE-CPI-05.2019-eng.pdf), [US CDC](https://www.cdc.gov/globalhealth/healthprotection/gddopscenter/how.html#:~:text=Indicator%2Dbased%20surveillance%20involves%20reports,the%20information%20obtained%20is%20standardized)). Systematic reporting of suspected cases or notifiable conditions through indicator-based surveillance forms one key component of an early warning system. VPD surveillance data can also be analyzed and triangulated with immunization programme data by to identify communities with zero-dose or under-immunized populations and inform both supplemental and routine immunization activities. 
 
 ### Intended users
 Through a collaborative process of working with implementing countries and surveillance stakeholders at multiple levels of the health system, the following have been identified as users or potential users of an integrated case-based surveillance system in DHIS2:  
 * Health facility staff: facility staff are often the first to report a suspected case through existing passive surveillance systems according to national polivies on reportable diseases and conditions; facility staff may also be engaged in the follow-up of the case's medical care and outcome.
 * District surveillance officers: surveillance officers at district or other sub-national administrative levels may be responsible for completing case investigations based on suspected case reports from facilities; following up case notifications and analyzing disease trends and outbreak alerts for their administrative area. 
 * Public health staff: receive alerts for potential disease outbreaks generated by the system; analyze surveillance data for trends that may indicate possible disease outbreaks and plan response activities where appropriate. 
+* Immunization programme staff: access and analyze VPD surveillance dashboards and indicators in DHIS2 for triangulating surveillance data with immunization programme data to inform supplemental & routine immunization activities
 * Laboratory staff: receive electronic specimen request forms; may be involved in entering or uploading laboratory results to a longitudinal case record.
 
 ### Diseases Covered
@@ -184,9 +191,7 @@ Notifications have been configured to trigger out-bound messages from the system
 * Lab Results Ready: this program notification can be used to alert user groups such as district health staff, surveillance officers or facility staff by message, email or SMS (with gateway configured) when lab results are available and updated in the system. The notification is triggered when the Lab Results program stage is marked as 'completed'. 
 
 ### Program Rules
-Program rules are used extensively throughout the tracker program to show/hide data elements, program stages and program stage sections based on the tracked entity attribute 'clinical diagnosis' selected during enrollment. 
-
-Program rules are also used for validation, such as warnings and error messages to ensure the standard Epid number format is followed. 
+Program rules are used extensively throughout the tracker program to show/hide data elements, program stages and program stage sections based on the tracked entity attribute 'clinical diagnosis' selected during enrollment. Program rules are also used for validation, such as warnings and error messages to ensure the standard Epid number format is followed. 
 
 A complete list of program rules is inluded in the metadata reference file for the package, accessed at [dhis2.org/who-package-downloads](https://dhis2.org/who-package-downloads)
 
@@ -226,10 +231,17 @@ When the CBS package is installed with the aggregate surveillance (IDSR) package
 
 ### Program Indicators
 
-Program indicators are used to automate the aggregation of individual-level case data for analysis or perform calculations such as time-between indicators. Examples include the number of suspected cases investigated within 48 hours. A complete list of program indicators is included in the metadata reference file for the package, accessed at [dhis2.org/who-package-downloads](https://dhis2.org/who-package-downloads)
+Program indicators are used to automate the aggregation of individual-level case data for analysis or perform calculations such as time-between variables across different stages of data collection. Examples include:
+- Number of suspected cases aggregated by clinical diagnosis (e.g. # of suspected meningitis cases)
+- Number of confirmed cases aggregated by disease and type of case confirmation (# confirmed measles cases, confirmed by lab vs epi-link)
+- Number of suspected cases investigated within 48 hours: based on time-between date of case notification and date of case investigation
+
+A complete list of program indicators is included in the metadata reference file for the package, accessed at [dhis2.org/who-package-downloads](https://dhis2.org/who-package-downloads)
 
 ### Indicators
-Indicators have been configured that combine one or more program indicators or use other data sources such as population for the denominator. Examples include:
+Indicators have been configured that combine one or more program indicators or use other data sources such as population for the denominator. All indicators associated with the VPD case-based tracker program are included in the **indicator group** 'VPD Case Surveillance', allowing analytics users to easily select from the list of VPD indicators in the DHIS2 data visualization apps. 
+
+Examples of indicators from the case-based program include:
 
 *% cases with cerebrospinal fluid (CSF) collected* 
 - Numerator: program indicator aggregating the number of suspected meningitis cases whose CSF sample was collected
